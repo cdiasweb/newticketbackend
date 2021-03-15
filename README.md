@@ -33,6 +33,10 @@ Docker version 19.03.12, build 48a66213fe
 2. Após instalar o docker, baixar o projeto com o comando abaixo:
 git clone https://github.com/cdiasweb/newticketbackend.git
 
-3. Acessar a pasta do projeto e rodar o comando para rodar o projeto.
+3. Instale o Composer para instalar as dependências do projeto:
+Rode o comando: ./composer.sh
+Após: ./composer.phar install
+
+4. Iniciar o projeto:
 ./vendor/bin/sail up
 
