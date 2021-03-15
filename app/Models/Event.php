@@ -11,4 +11,9 @@ class Event extends Model
     {
         $this->belongsTo(Customer::class);
     }
+
+    public function tickets()
+    {
+        $this->hasMany(Ticket::class);
+    }
 }

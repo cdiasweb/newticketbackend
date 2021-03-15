@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CompanysController;
+use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,13 @@ use App\Http\Controllers\CompanysController;
 |
 */
 
-Route::post('/company/register', [CompanysController::class, 'register']);
+Route::post('/company/register', [CompaniesController::class, 'register']);
+
+//Route::post('/autentica', [AuthController::class, 'login']);
+
+Route::get('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
